@@ -1,0 +1,12 @@
+{
+  "id": "profile",
+  "name": "Richmond Nyamekye",
+  "website": "https://richie.netlify.app",
+  "github": "https://github/rein14",
+  "linkedin": "https://www.linkedin.com/in/richmond-nyamekye-5896127a/",
+  "twitter": "https://twitter/reinrich14",
+  "about_me": "I love building random things",
+  "education": "Ghana Technology University College",
+  "languages": ["Python", "Javascript"],
+  "frameworks": ["DJango", "FastAPI", "Flask", "React"]
+}
