@@ -1,9 +1,9 @@
+from functools import cache
 import json
 import typing
 from dataclasses import dataclass, field
-
 from fastapi import FastAPI, HTTPException, Response
-
+from cached import cached
 app = FastAPI()
 
 
@@ -22,6 +22,7 @@ class Profile:
     
  
 profiles: dict[str, Profile] = {}
+
 
 with open("profile.json", encoding="utf8") as profile:
     raw_profile = json.load(profile)
@@ -44,6 +45,7 @@ class PrettyJSONResponse(Response):
             separators=(',', ': '),
         ).encode('utf-8')
 
+@cached
 @app.get("/{profile_id}", response_model=Profile, response_class=PrettyJSONResponse)
 def read_profile(profile_id: str):
     if profile_id not in profiles:
